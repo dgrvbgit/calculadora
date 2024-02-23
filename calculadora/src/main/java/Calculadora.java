@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Calculadora {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -13,6 +14,9 @@ public class Calculadora {
         System.out.println("Seleccione la operación a realizar:");
         System.out.println("1. Suma");
         System.out.println("2. Resta");
+        System.out.println("3. Multiplicación");
+        System.out.println("4. División");
+        System.out.println("5. Potencia");
         int opcion = sc.nextInt();
         double resultado = 0;
 
@@ -31,12 +35,15 @@ public class Calculadora {
                     resultado = num1 / num2;
                 } else {
                     System.out.println("No se puede dividir entre 0");
-                    return; 
+                    return;
                 }
+                break;
+            case 5:
+                resultado = Math.pow(num1, num2);
                 break;
             default:
                 System.out.println("Opción no válida");
-                return; 
+                return;
         }
 
         System.out.println("El resultado es: " + resultado);
